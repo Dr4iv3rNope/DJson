@@ -20,7 +20,7 @@ string json = JsonConverter.ParseJsonString(root);
 
 Unserialize example:
 ```csharp
-string json = "{\"test\":\"this is string \"what\""}";
+string json = "{\"test\":\"this is string \"what\"\"}";
 
 JsonInterface root = JsonInterface.ParseJson(json);
 
