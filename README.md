@@ -18,7 +18,7 @@ for(int i = 0; i < 10; i++)
 string json = JsonConverter.ParseJsonString(root);
 ```
 
-Unserialize example:
+Deserialize example:
 ```csharp
 string json = "{\"test\":\"this is string \"what\"\"}";
 
@@ -27,7 +27,7 @@ JsonInterface root = JsonInterface.ParseJson(json);
 string test = root["test"].Value;
 ```
 
-Unserialize as object (struct/class and etc..):
+Deserialize as object (struct/class and etc..):
 ```csharp
 string json = "{\"hello"\:true, \"this is must be enum\":1 "\arr"\:[1, 2, 3, 4], \"array of objs\":[{\"this is in object\":1, "some int":100}, {\"this is in object\":1, "some int":1337}, {\"this is in object\":0, "some int":15}]}"
 
@@ -61,12 +61,12 @@ struct A
 
 JsonInterface root = JsonConverter.ParseJson(json);
 
-// also if you need unserialize multiple objects you can use
+// also if you need deserialize multiple objects you can use
 // out[] = JsonConverter.ParseObjects<out>(JsonInterface)
 A a_object = JsonConverter.ParseObject<A>(root);
 ```
 
-Also you can Unserialize object:
+Also you can Deserialize object:
 ```csharp
 struct A
 {
@@ -83,7 +83,7 @@ A a_obj = A
     ArrayOfInt = { 1, 2, 3, 4, 5 }
 };
 
-// also if you need unserialize multiple objects you can use
+// also if you need deserialize multiple objects you can use
 // JsonInterface = JsonConverter.UnParseObjects(object[])
 JsonInterface unserialized_a = JsonConverter.UnParseObject(a_obj);
 ```
